@@ -1,9 +1,8 @@
-
 //variables globales y selectores del DOM acortados en variables
 let numerin = 6;
 let colors = generadorRandom(numerin);
 let squares = document.querySelectorAll(".square");
-let pickedColor = pickColour();
+let pickedColor = pickColor();
 let colorDisplay = document.querySelector("#colorDisplay");
 let message = document.querySelector("#message");
 let h1 = document.querySelector("h1");
@@ -18,7 +17,7 @@ modoFacil.addEventListener("click", function () {
 	modoDificil.classList.remove("active");
 	numerin = 3;
 	colors = generadorRandom(numerin);
-	pickedColor = pickColour();
+	pickedColor = pickColor();
 	colorDisplay.textContent = pickedColor;
 	for(let i=0 ; i<squares.length ; i++){
     	squares[i].style.backgroundColor = colors[i];
@@ -32,7 +31,7 @@ modoDificil.addEventListener("click", function () {
 	modoFacil.classList.remove("active");
 	numerin = 6;
 	colors = generadorRandom(numerin);
-	pickedColor = pickColour();
+	pickedColor = pickColor();
 	colorDisplay.textContent = pickedColor;
 	for(let i=0 ; i<squares.length ; i++){
     	squares[i].style.backgroundColor = colors[i];
@@ -56,8 +55,8 @@ for(let i=0 ; i<squares.length ; i++){
     	// compara color ganador con el clickeado
 	    if(clickedColor === pickedColor){
 	    	message.textContent = "Correcto!";
-	    	reset.textContent = "Click intentar de nuevo";
-	    	changeColours(clickedColor);
+	    	reset.textContent = "Click intentar de nuevo";//sobrescrible el mensaje
+	    	changeColors(clickedColor);
 	    } else{
 	    	this.style.backgroundColor = "#232323";
 	    	message.textContent = "Intenta nuevamente!";
@@ -70,7 +69,7 @@ reset.addEventListener("click", function(){
     // Genera 6 nuevas random colors
     colors = generadorRandom(numerin);
     // Elegir nuevo ganador
-    pickedColor = pickColour();
+    pickedColor = pickColor();
     // cambiar mensaje de pantalla que contiene nuevo color
     colorDisplay.textContent = pickedColor;
     message.textContent = "";
@@ -83,14 +82,14 @@ reset.addEventListener("click", function(){
     reset.textContent = "Reset Colours";
     });
 
-function changeColours(colour){
+function changeColors(colour){
 	h1.style.background = colour;
 	for (let i=0 ; i<squares.length ; i++){
 		squares[i].style.backgroundColor = colour;		
 	}
 }
 
-function pickColour(){
+function pickColor(){
 	let number = Math.floor(Math.random() * colors.length);
 	return colors[number];
 }
@@ -99,12 +98,12 @@ function generadorRandom(numeros){
 	let matriz = [];
 	// Agregar colores a la matriz
 	for(let i=0 ; i<numeros ; i++){
-		matriz.push(randomColour());
+		matriz.push(randomColor());
 	}
 	return matriz;
 }
 
-function randomColour(){
+function randomColor(){
 	// random rojo de 0 a 255
 	let red = Math.floor(Math.random() * 256);
 	// random verde de 0 a 255

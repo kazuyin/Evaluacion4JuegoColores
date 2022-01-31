@@ -55,7 +55,7 @@ for(let i=0 ; i<squares.length ; i++){
     	// compara color ganador con el clickeado
 	    if(clickedColor === pickedColor){
 	    	message.textContent = "Correcto!";
-	    	reset.textContent = "Click intentar de nuevo";//sobrescrible el mensaje
+	    	reset.textContent = "Click intentar de nuevo";//sobrescribe el mensaje
 	    	changeColors(clickedColor);
 	    } else{
 	    	this.style.backgroundColor = "#232323";
@@ -73,13 +73,13 @@ reset.addEventListener("click", function(){
     // cambiar mensaje de pantalla que contiene nuevo color
     colorDisplay.textContent = pickedColor;
     message.textContent = "";
-    this.textContent = "Reset Colours";
+    this.textContent = "Resetear colores";
     // Asignar 6 nuevos colores a los cuadros
     for(let i=0 ; i<colors.length ; i++){
     	squares[i].style.backgroundColor = colors[i];
     }
     h1.style.background = "linear-gradient(to right, red, orange, yellow, green, blue)";
-    reset.textContent = "Reset Colours";
+    reset.textContent = "Resetear Colores";
     });
 
 function changeColors(colour){

@@ -82,10 +82,10 @@ reset.addEventListener("click", function(){
     reset.textContent = "Resetear Colores";
     });
 
-function changeColors(colour){
-	h1.style.background = colour;
+function changeColors(color){
+	h1.style.background = color;
 	for (let i=0 ; i<squares.length ; i++){
-		squares[i].style.backgroundColor = colour;		
+		squares[i].style.backgroundColor = color;		
 	}
 }
 

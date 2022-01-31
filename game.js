@@ -1,7 +1,7 @@
 
 //variables globales y selectores del DOM acortados en variables
-let number = 6;
-let colors = generadorRandom(number);
+let numerin = 6;
+let colors = generadorRandom(numerin);
 let squares = document.querySelectorAll(".square");
 let pickedColor = pickColour();
 let colorDisplay = document.querySelector("#colorDisplay");
@@ -16,8 +16,8 @@ colorDisplay.textContent = pickedColor;
 modoFacil.addEventListener("click", function () {
 	modoFacil.classList.add("active");
 	modoDificil.classList.remove("active");
-	number = 3;
-	colors = generadorRandom(number);
+	numerin = 3;
+	colors = generadorRandom(numerin);
 	pickedColor = pickColour();
 	colorDisplay.textContent = pickedColor;
 	for(let i=0 ; i<squares.length ; i++){
@@ -30,8 +30,8 @@ modoFacil.addEventListener("click", function () {
 modoDificil.addEventListener("click", function () {
 	modoDificil.classList.add("active");
 	modoFacil.classList.remove("active");
-	number = 6;
-	colors = generadorRandom(number);
+	numerin = 6;
+	colors = generadorRandom(numerin);
 	pickedColor = pickColour();
 	colorDisplay.textContent = pickedColor;
 	for(let i=0 ; i<squares.length ; i++){
@@ -68,7 +68,7 @@ for(let i=0 ; i<squares.length ; i++){
 
 reset.addEventListener("click", function(){
     // Genera 6 nuevas random colors
-    colors = generadorRandom(number);
+    colors = generadorRandom(numerin);
     // Elegir nuevo ganador
     pickedColor = pickColour();
     // cambiar mensaje de pantalla que contiene nuevo color

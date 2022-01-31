@@ -68,14 +68,14 @@ for(let i=0 ; i<squares.length ; i++){
 reset.addEventListener("click", function(){
     // Genera 6 nuevas random colors
     colors = generadorRandom(numerin);
-    // Elegir nuevo ganador
+    // Elegir nuevo ganador entre los 6
     pickedColor = pickColor();
-    // cambiar mensaje de pantalla que contiene nuevo color
+    // cambiar mensaje de pantalla que contiene nuevo codigo de color
     colorDisplay.textContent = pickedColor;
     message.textContent = "";
     this.textContent = "Resetear colores";
     // Asignar 6 nuevos colores a los cuadros
-    for(let i=0 ; i<colors.length ; i++){
+    for(let i=0 ; i<colors.length ; i++){//Vuelve asignar los cuadros pintados
     	squares[i].style.backgroundColor = colors[i];
     }
     h1.style.background = "linear-gradient(to right, red, orange, yellow, green, blue)";
@@ -89,8 +89,8 @@ function changeColors(color){
 	}
 }
 
-function pickColor(){
-	let number = Math.floor(Math.random() * colors.length);
+function pickColor(){//asigna colores a 6,3 o diferentes cuadros
+	let number = Math.floor(Math.random() * colors.length);//la propiedad length se adapta a cuantos cuadros modifique el codigo
 	return colors[number];
 }
 
